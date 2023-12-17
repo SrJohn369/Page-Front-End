@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    height: 500vh;
+}
+
+body{
+    
+}
+
+header{
+    width: 100%;
+    padding: 45px 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+header.rolagem-baixo{
+    backdrop-filter: blur(10px);
+    padding: 15px 4%;
+    transition: 1s;
+}
+header.rolagem-cima {
+    transition: 1s;
+}
+
+.container{
+    max-width: 1280px;
+    margin: auto;
+}
+/* .flex{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+} */
+/* ================ NAVBAR ================ */
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    max-width: 100px;
+    /* Ajuste a largura máxima da imagem conforme necessário */
+    height: auto;
+}
+
+
+/* ================ SECTION ================ */
+
+.banner{
+    height: 100vh;
+    background-image: url(/img/vermeho-gas.jpg);
+    background-position: 100% 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
