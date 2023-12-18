@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url('/img/vortice.gif');
+    /* Substitua pelo caminho da sua imagem de fundo do body */
+    background-size: cover;
+    height: 100vh;
+}
+
+.section-with-hole {
+    position: relative;
+    height: 500px;
+    /* Ajuste conforme necessário */
+    background-color: #333;
+    /* Cor de fundo da seção */
+    overflow: hidden;
+}
+
+.section-with-hole::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    /* Ajuste conforme necessário */
+    left: 50%;
+    /* Ajuste conforme necessário */
+    transform: translate(-50%, -50%);
+    width: 200px;
+    /* Largura do buraco, ajuste conforme necessário */
+    height: 200px;
+    /* Altura do buraco, ajuste conforme necessário */
+    background: radial-gradient(circle, transparent 0%, transparent 70%, black 70%, black 100%);
+    border-radius: 50%;
+    /* Transforma o buraco em um círculo */
+    z-index: 1;
+    /* Coloca o buraco acima do conteúdo */
+}
+
+.section-with-hole .content {
+    position: relative;
+    z-index: 2;
+    /* Coloca o conteúdo acima do buraco */
+    padding: 20px;
+    text-align: center;
+    color: white;
+    /* Cor do texto, ajuste conforme necessário */
+}
