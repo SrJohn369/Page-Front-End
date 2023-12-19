@@ -103,6 +103,13 @@ body {
 .div-up-text h3 {
     margin-bottom: 50px;
 }
+
+.div-down {
+    display: flex;
+    margin: 30px;
+    gap: 60px;
+}
+
 /* ================== BANNER ================== */
 
 .banner {
