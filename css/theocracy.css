@@ -20,7 +20,7 @@ header ul {
     gap: 120px;
 }
 header ul li {
-    
+
 }
 header ul li a {
     color: #fff;
@@ -34,12 +34,17 @@ body {
     background-size: 100% 100%;
     background-attachment: fixed;
 }
+hr {
+    width: 70%;
+    margin-left: 15%;
+}
 
 /* ================== OUTRAS CLASSES ================== */
 
 .rolagem-baixo {
     padding: 20px 4%;
     backdrop-filter: blur(10px);
+    z-index: 1000;
     transition: 0.5s;
 }
 
@@ -65,8 +70,9 @@ body {
     background-color: black;
     color: #fff;
 }
+
 .section h1, .section p {
-    
+
 }
 
 .buraco {
@@ -109,6 +115,23 @@ body {
     margin: 30px;
     gap: 60px;
 }
+.div-down h3, p{
+    margin-bottom: 40px;
+}
+.div-down img {
+    margin-bottom: 50px;
+    margin-right: 70px;
+}
+
+.album {
+
+}
+
+.album img {
+    width: 60%;
+    height: 90%;
+}
+
 
 /* ================== BANNER ================== */
 
@@ -122,30 +145,71 @@ body {
 
 /* ================== CARDS ================== */
 
+.cards {
+    position: relative;
+    overflow: hidden;
+}
+
+.cards::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-image: url(/img/as-the-world\ bleeds.jpg);
+    background-repeat: no-repeat;
+    background-position: 0 9%;
+    background-size: 100% 650%;
+    filter: brightness(50%);
+    z-index: -1;
+}
+
 .card-container {
     max-width: 1000px;
-    margin: 0 auto;
-    border: 2px solid red;
+    margin: 5% 15%;
+    display: flex;
 }
 
 .card {
-    background-color: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 30px;
-    margin: 10px;
-    padding: 20px;
-    width: 700px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    gap: 120px;
+    box-shadow: 2px 2px 8px rgb(85, 0, 0);
+    height: 10%;
+    width: 362px;
     transition: transform 0.3s ease-in-out;
 }
-
 .card:hover {
-    transform: scale(1.05);
+    transform: translateX(-20px);
+    /* Ajuste a quantidade de subida conforme necessário */
 }
 
-.card:nth-child(odd) {
-    margin-left: auto;
+.card h4 {
+    color: #fff;
+    filter: brightness(100%);
 }
 
-.card:nth-child(even) {
-    margin-right: auto;
+.card svg {
+    margin-left: 20%;
 }
+
+/* ============ DISCO ================ */
+
+ /* #vinyl-container {
+     width: 200px;
+     height: 200px;
+     cursor: pointer;
+     user-select: none;
+ } */
+
+ #vinyl-icon {
+     animation: rotateVinyl 3s linear infinite;
+ }
+
+ @keyframes rotateVinyl {
+     to {
+         transform: rotate(360deg);
+     }
+ }
