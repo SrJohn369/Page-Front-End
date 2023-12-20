@@ -37,6 +37,7 @@ body {
 hr {
     width: 70%;
     margin-left: 15%;
+    box-shadow: 0 0 10px #ff0000;
 }
 
 /* ================== OUTRAS CLASSES ================== */
@@ -175,8 +176,7 @@ hr {
     color: #fff;
     display: flex;
     align-items: center;
-    gap: 120px;
-    box-shadow: 2px 2px 8px rgb(85, 0, 0);
+    box-shadow: 2px 2px 8px #550000;
     height: 10%;
     width: 362px;
     transition: transform 0.3s ease-in-out;
@@ -188,11 +188,20 @@ hr {
 
 .card h4 {
     color: #fff;
+    text-shadow: 0 0 6px #ff0000;
     filter: brightness(100%);
+    margin-right: 5%;
 }
 
 .card svg {
     margin-left: 20%;
+}
+
+.card #timer {
+    color: #ffffff;
+    text-shadow: 0 0 5px #ff0000;
+    margin-right: 5%;
+    margin-left: auto;
 }
 
 /* ============ DISCO ================ */
