@@ -29,7 +29,7 @@ header ul li a {
 
 body {
     font-family: 'Arial', sans-serif;
-    background-image: url(img/vortice.gif);
+    background-image: url(../img/vortice.gif);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     background-attachment: fixed;
