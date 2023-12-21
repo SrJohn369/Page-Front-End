@@ -206,19 +206,14 @@ hr {
 
 /* ============ DISCO ================ */
 
- /* #vinyl-container {
-     width: 200px;
-     height: 200px;
-     cursor: pointer;
-     user-select: none;
- } */
+.disco {}
 
- #vinyl-icon {
-     animation: rotateVinyl 3s linear infinite;
+.animacao {
+    animation: rotateVinyl 2s linear infinite;
  }
 
  @keyframes rotateVinyl {
      to {
-         transform: rotate(360deg);
+        transform: rotate(360deg);
      }
  }

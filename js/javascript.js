@@ -7,60 +7,28 @@ window.addEventListener("scroll", () => {
 
 // ============================= DISCO ==================================
 
-let currentAudio = null;
-let isPlaying = false;
+let audio;
 
-function toggleMusic() {
-    const vinylIcons = document.querySelectorAll('[id^="vinyl-icon-"]');
-    console.log("entrou na funcção toggle");
+document.addEventListener('DOMContentLoaded', () => {
+    var divs = document.querySelectorAll('.disco');
 
-    vinylIcons.forEach((vinylIcon) => {
-        if (!isPlaying) {
-            console.log("entrou no if");
-            isPlaying = true;
-            vinylIcon.style.display = 'inline-block';
-            startRotation();
-        } else {
-            console.log("entrou else");
-            isPlaying = false;
-            stopRotation();
-        }
+    divs.forEach(function (div) {
+        div.addEventListener('click', function () {
+            if (!audio) {
+                var caminhoMusica = div.getAttribute('data-musica');
+                audio = new Audio(caminhoMusica);
 
-        if (currentAudio) {
-            console.log("audio atual");
-            currentAudio.pause();
-            currentAudio.currentTime = 0;
-        }
+                audio.play();
+                div.classList.add('animacao');
 
-        currentAudio = chooseNextAudio();
-
-        if (isPlaying) {
-            console.log("se está rodando");
-            currentAudio.play();
-        }
-
-        function startRotation() {
-            console.log("inicia a rotação");
-            document.getElementById(vinylIcon.id).style.animationPlayState = 'running';
-        }
-
-        function stopRotation() {
-            console.log("para a rotação");
-            document.getElementById(vinylIcon.id).style.animationPlayState = 'paused';
-        }
-
+                // Adiciona um evento para garantir que a música pare quando o mouse sair da div
+                div.addEventListener('mouseout', function () {
+                    audio.pause();
+                    div.classList.remove('animacao');
+                });
+            } else if(audio) {
+                audio.remove()
+            }
+        });
     });
-}
-
-function chooseNextAudio() {
-    console.log("verificações");
-    if (!currentAudio || currentAudio.id === 'audio4') {
-        return document.getElementById('audio1');
-    } else if (currentAudio.id === 'audio1') {
-        return document.getElementById('audio2');
-    } else if (currentAudio.id === 'audio2') {
-        return document.getElementById('audio3');
-    } else {
-        return document.getElementById('audio4');
-    }
-}
+});
